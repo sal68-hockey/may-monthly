@@ -56,3 +56,17 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .card-title {
   font-size: 1.6rem;
   text-shadow: 1px 1px 2px silver;
 }
+/* Section: How They Changed Hockey */
+.impact-section {
+  background: linear-gradient(to bottom right, #0f0f0f, #1c1c1c);
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}.impact-section {
+  animation: fadeIn 1.5s ease-in;
+}
