@@ -43,7 +43,7 @@ players.forEach((player, index) => {
   };
 
   // Conditional styling: highlight top 3
-  if (index < 3) {
+  if (index < 25) {
     card.style.border = "2px solid silver";
     card.style.boxShadow = "0 0 10px silver";
   }
@@ -53,4 +53,13 @@ players.forEach((player, index) => {
   col.append(card);
   playerCardsContainer.append(col);
 });
+// Show button when user scrolls down 400px
+window.onscroll = function () {
+  const btn = document.getElementById("topBtn");
+  btn.style.display = (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) ? "block" : "none";
+};
+
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
