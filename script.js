@@ -63,3 +63,34 @@ function topFunction() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+
+// Sort by year ascending
+renderTimeline(timelineEvents.sort((a, b) => a.year - b.year));const scorerTimeline = [
+  { year: 1979, name: "Wayne Gretzky", detail: "Rewrote the NHL record books with 2,857 points." },
+  { year: 1990, name: "Jaromír Jágr", detail: "Dominated across decades with European finesse." },
+  { year: 1979, name: "Mark Messier", detail: "Defined leadership and versatility." },
+  { year: 1946, name: "Gordie Howe", detail: "Set the gold standard for toughness and scoring." },
+  { year: 1981, name: "Ron Francis", detail: "Revolutionized playmaking consistency." },
+  { year: 1981, name: "Marcel Dionne", detail: "Elite scorer before modern systems." },
+  { year: 1980, name: "Steve Yzerman", detail: "Helped modernize two-way play." },
+  { year: 1990, name: "Mario Lemieux", detail: "Most talented scorer per game in NHL history." },
+  { year: 1971, name: "Phil Esposito", detail: "Invented net-front dominance." },
+  { year: 1980, name: "Joe Sakic", detail: "Defined clutch scoring in the 1990s." }
+];
+
+document.getElementById("showTimelineBtn").addEventListener("click", () => {
+  const container = document.getElementById("timelineContainer");
+  container.innerHTML = ""; // Clear previous
+  scorerTimeline.forEach((entry, i) => {
+    const card = document.createElement("div");
+    card.className = "col-md-8 timeline-card mx-auto";
+    card.innerHTML = `
+      <h5>${entry.year} – ${entry.name}</h5>
+      <p>${entry.detail}</p>
+    `;
+    container.appendChild(card);
+    setTimeout(() => card.classList.add("visible"), 100 * i);
+  });
+});
+
+
