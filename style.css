@@ -123,3 +123,40 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .card-title {
 .timeline-card p {
   color: #ccc;
 }
+.timeline-card {
+  background: #1c1c1c;
+  border-left: 6px solid silver;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.timeline-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, #444 30%, #000 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.back-to-top:hover {
+  transform: scale(1.1);
+}.back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
